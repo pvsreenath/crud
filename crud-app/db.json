@@ -1,0 +1,23 @@
+{
+  "products": [
+    {
+      "productName": "Samsung12",
+      "category": "Electronics",
+      "date": "2022-06-05T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 14000,
+      "comment": "It's new man",
+      "id": 1
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
