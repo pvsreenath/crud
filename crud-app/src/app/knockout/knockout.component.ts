@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog'
 
 @Component({
@@ -8,14 +8,16 @@ import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog'
 })
 export class KnockoutComponent implements OnInit {
 
-  constructor(private dialogRef: MatDialogRef<KnockoutComponent>) { }
+  constructor(private dialogRef: MatDialogRef<KnockoutComponent>,
+    @Inject(MAT_DIALOG_DATA) public data:any,
+    ) { }
 
   buttonType = 'Yes'
 
   ngOnInit(): void {
   }
 
-  deleteIt(){
+  doIt(){
     this.dialogRef.close('Yes')
   }
 

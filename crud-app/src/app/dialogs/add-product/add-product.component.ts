@@ -1,7 +1,10 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup,FormBuilder,Validators } from '@angular/forms';
 import { ProductService } from 'src/app/services/product.service';
-import { MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog'
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog'
+import { KnockoutComponent } from 'src/app/knockout/knockout.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { InfoComponent } from 'src/app/info/info.component';
 
 @Component({
   selector: 'app-add-product',
@@ -12,7 +15,9 @@ export class AddProductComponent implements OnInit {
 
   constructor(private fb: FormBuilder, 
     private productService: ProductService, 
+    public dialog: MatDialog,
     private dialogRef: MatDialogRef<AddProductComponent>,
+    private snackbar: MatSnackBar,
     @Inject(MAT_DIALOG_DATA) public editData:any) { }
   freshnessList = ['Brand New', 'Refurbished','old']
   productForm !: FormGroup;
@@ -47,7 +52,15 @@ export class AddProductComponent implements OnInit {
         console.log(this.productForm.value)
         this.productService.postProduct(this.productForm.value)
         .subscribe(()=>{
-          alert("product Added");
+          // this.snackbar.open('product has been Added','ok',{
+          //   duration: 5000
+          // })
+          this.snackbar.openFromComponent(InfoComponent,{
+            data: {
+              message: 'Added'
+            },
+            duration: 5000
+          });
           this.productForm.reset();
           this.dialogRef.close('save')
         },
@@ -57,14 +70,28 @@ export class AddProductComponent implements OnInit {
       }
     }
     else{
-      this.updateProduct()
+      this.dialog.open(KnockoutComponent, {
+        data: 'update'
+      }).afterClosed()
+      .subscribe((data)=>{
+        if(data=='Yes'){
+          this.updateProduct()
+        }
+      });
     }
   }
   updateProduct(){
-    console.log(this.productForm.value,this.editData.id);
     this.productService.updateProduct(this.productForm.value,this.editData.id)
     .subscribe(()=>{
-      alert("product updated")
+      // this.snackbar.open('product has been updated','ok',{
+      //   duration: 5000
+      // })
+      this.snackbar.openFromComponent(InfoComponent,{
+        data: {
+          message: 'updated'
+        },
+        duration: 5000
+      })
       this.productForm.reset()
       this.dialogRef.close('update')
     });

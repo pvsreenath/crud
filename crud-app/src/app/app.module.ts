@@ -21,12 +21,15 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { KnockoutComponent } from './knockout/knockout.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { InfoComponent } from './info/info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddProductComponent,
-    KnockoutComponent
+    KnockoutComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +50,8 @@ import { KnockoutComponent } from './knockout/knockout.component';
     HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

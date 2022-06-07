@@ -1,13 +1,85 @@
 {
   "products": [
     {
+      "productName": "Denim",
+      "category": "Fashion",
+      "date": "2022-06-06T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 50034,
+      "comment": "cloths",
+      "id": 3
+    },
+    {
+      "productName": "Mango",
+      "category": "Fruits",
+      "date": "2022-06-06T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 29,
+      "comment": "fruits are good for health",
+      "id": 4
+    },
+    {
       "productName": "Samsung12",
       "category": "Electronics",
       "date": "2022-06-05T18:30:00.000Z",
       "freshness": "Brand New",
-      "price": 14000,
+      "price": 15008,
       "comment": "It's new man",
       "id": 1
+    },
+    {
+      "productName": "iphone2",
+      "category": "Electronics",
+      "date": "2022-06-06T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 23,
+      "comment": "new",
+      "id": 2
+    },
+    {
+      "productName": "Denim2",
+      "category": "Fashion",
+      "date": "2022-06-06T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 500,
+      "comment": "cloths",
+      "id": 3
+    },
+    {
+      "productName": "Mango2",
+      "category": "Fruits",
+      "date": "2022-06-06T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 20,
+      "comment": "fruits are good for health",
+      "id": 4
+    },
+    {
+      "productName": "nokia2",
+      "category": "Electronics",
+      "date": "2022-06-29T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 11000,
+      "comment": "smart phone",
+      "id": 5
+    },
+    {
+      "productName": "Grapes2",
+      "category": "Fruits",
+      "date": "2022-06-06T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 40,
+      "comment": "GRAPES",
+      "id": 6
+    },
+    {
+      "productName": "Hello",
+      "category": "Fashion",
+      "date": "2022-06-08T18:30:00.000Z",
+      "freshness": "Brand New",
+      "price": 123,
+      "comment": "Hai",
+      "id": 7
     }
   ],
   "comments": [
